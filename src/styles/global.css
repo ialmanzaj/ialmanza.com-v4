@@ -11,7 +11,9 @@
 		--theme-text: 203deg 11% 15%;
 		--theme-accent: 351deg 66% 48%;
 		--theme-accent-2: 0deg 0% 7%;
+		--color-outline: rgba(0, 0, 0, 0.1);
 		--theme-quote: 351deg 66% 48%;
+		--color-muted: rgba(90, 80, 70, 0.8);
 	}
 
 	:root.dark {
@@ -28,6 +30,39 @@
 		@apply scroll-smooth;
 	}
 
+	nav {
+		margin: 0 auto 3em;
+		width: var(--wrap-normal);
+		max-width: var(--wrap-wide);
+	}
+
+	content a:not(.plain):not(.tag):not(.internal-link):not(.footnote):not(.reversefootnote) {
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2.5' stroke='gray' class='w-6 h-6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25' /%3E%3C/svg%3E%0A");
+		background-position: right 33%;
+		background-repeat: no-repeat;
+		background-size: 0.7em;
+		padding-right: 0.75em;
+	}
+
+	.capitalize-first:first-letter {
+		text-transform: uppercase;
+	}
+
+	.bt {
+		border-top: 1px solid var(--color-outline);
+	}
+	.bb {
+		border-bottom: 1px solid var(--color-outline);
+	}
+	.muted {
+		color: var(--color-muted);
+	}
+	.cactus-link {
+		text-decoration: underline;
+	}
+	.tag {
+		text-transform: capitalize;
+	}
 	html body {
 		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-sm font-normal text-textColor antialiased;
 	}

@@ -28,7 +28,7 @@ const { page } = Astro.props;
 const { tag } = Astro.params;
 
 const meta = {
-	title: `Tag: ${tag}`,
+	title: `Topic: ${tag}`,
 	description: `View all posts with the tag - ${tag}`,
 };
 
@@ -36,13 +36,13 @@ const paginationProps = {
 	...(page.url.prev && {
 		prevUrl: {
 			url: page.url.prev,
-			text: `← Previous Tags`,
+			text: `← Previous Topic`,
 		},
 	}),
 	...(page.url.next && {
 		nextUrl: {
 			url: page.url.next,
-			text: `Next Tags →`,
+			text: `Next Topic →`,
 		},
 	}),
 };
@@ -50,9 +50,9 @@ const paginationProps = {
 
 <PageLayout meta={meta}>
 	<h1 class="title mb-6 flex items-center">
-		<a href="/tags/" class="text-accent sm:hover:underline">Tags</a>
-		<span class="me-3 ms-2">→</span>
-		<span class="text-xl">#{tag}</span>
+		<a href="/topics/" class="muted">Topics</a>
+		<span class="muted me-3 ms-2">/</span>
+		<span class="capitalize-first text-xl">{tag}</span>
 	</h1>
 	<section aria-label="Blog post list">
 		<ul class="space-y-8">

@@ -1,12 +1,12 @@
 ---
 import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
-import SocialList from "@/components/SocialList";
-import { getAllPosts, sortMDByDate } from "@/utils";
+import { getAllPosts, sortMDByDate, getUniqueTagsWithCount } from "@/utils";
 
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+const allTags = getUniqueTagsWithCount(allPosts);
 
 const cactusTech: Array<{ title: string; desc: string; href: string }> = [
 	{
@@ -24,46 +24,46 @@ const cactusTech: Array<{ title: string; desc: string; href: string }> = [
 		desc: "Rapidly build modern websites without ever leaving your HTML.",
 		href: "https://tailwindcss.com",
 	},
-	{
-		title: "Markdown",
-		desc: "Simple and easy-to-use markup language.",
-		href: "https://www.markdownguide.org/",
-	},
-	{
-		title: "MDX",
-		desc: "Markdown for the component era.",
-		href: "https://mdxjs.com/",
-	},
-	{
-		title: "Satori",
-		desc: "Generating png Open Graph images for blog posts.",
-		href: "https://github.com/vercel/satori",
-	},
-	{
-		title: "Pagefind",
-		desc: "A fully static search library.",
-		href: "https://pagefind.app/",
-	},
-	{
-		title: "Astro Icon",
-		desc: "An easy to use Icon component for Astro.",
-		href: "https://github.com/natemoo-re/astro-icon#readme",
-	},
 ];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section>
-		<h1 class="title mb-6">Hello World!</h1>
-		<p class="mb-4">
-			Hi, I’m a theme for Astro, an example of how you can use this starter to create a personal
-			blog. If you want to know more about how you can customise me, add more posts, and make it
-			your own, click on the github icon link below and it will take you to my repo.
-		</p>
-		<SocialList />
+	<article>
+		<content>
+			<p class="mb-4">
+				I’m a self-taught software engineer, maker and digital nomad based LATAM. Currently building
+				crypto experiments and ideas with smart contracts, Solidity, EVM, UI, and everything in
+				between.
+			</p>
+			<p class="mb-4">
+				I’m the founder of Zeneca. Previously, I co-founded Cabin, a DAO building a decentralized
+				city, and The Solidity Guild, a community of practice for smart contract engineers. I am
+				also a contributor at El Cap.
+			</p>
+			<p class="faint small muted no-wrap text-right">
+				<a class="internal-link" href="/about">Read&nbsp;more&nbsp;→</a>
+			</p>
+		</content>
+	</article>
+	<section class="bt bb mb-8 mt-5 pb-8 pt-3">
+		<h3 class="my-4">
+			<a href="/topics" class="muted internal-link font-ui">Topics</a>
+		</h3>
+		<div class="flex flex-wrap leading-6">
+			{
+				allTags.map(([tag, val], index, array) => (
+					<>
+						<a class="tag cactus-link" href={`/topics/${tag}/`}>
+							{tag}
+						</a>
+						{index !== array.length - 1 && <span class="muted">,&nbsp;</span>}
+					</>
+				))
+			}
+		</div>
 	</section>
 	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
+		<h2 class="title mb-4 text-xl">Writings</h2>
 		<ul class="space-y-4 sm:space-y-2">
 			{
 				allPostsByDate.map((p) => (
@@ -75,23 +75,25 @@ const cactusTech: Array<{ title: string; desc: string; href: string }> = [
 		</ul>
 	</section>
 	<section class="mt-16">
-		<h2 class="title mb-4 text-xl">Technologies</h2>
-		<ul class="space-y-4 sm:space-y-2">
-			{
-				cactusTech.map(({ href, title, desc }) => (
-					<li>
-						<a
-							href={href}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="cactus-link inline-block"
-						>
-							{title}
-						</a>: 
-						<p class="inline-block sm:mt-2">{desc}</p>
-					</li>
-				))
-			}
-		</ul>
+		<h2 class="title mb-4 text-xl">Selected projects</h2>
+		<content>
+			<ul class="space-y-4 sm:space-y-2">
+				{
+					cactusTech.map(({ href, title, desc }) => (
+						<li>
+							<a
+								href={href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="cactus-link inline-block"
+							>
+								{title}
+							</a>
+							<p class="inline-block sm:mt-2">{desc}</p>
+						</li>
+					))
+				}
+			</ul>
+		</content>
 	</section>
 </PageLayout>

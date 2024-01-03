@@ -6,9 +6,9 @@ import { menuLinks } from "@/site-config";
 const url = new URL(Astro.request.url);
 ---
 
-<header id="main-header" class="group relative mb-28 flex items-center sm:ps-[4.5rem]">
+<header id="main-header" class="group relative flex items-center sm:ps-[4.5rem]">
 	<div class="flex sm:flex-col">
-		<a
+		<!-- <a
 			href="/"
 			class="inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block"
 			aria-current={url.pathname === "/" ? "page" : false}
@@ -34,29 +34,30 @@ const url = new URL(Astro.request.url);
 				<path d="M45.334 240 0 213.334v120L45.334 360V240Z" fill="#B04304"></path>
 			</svg>
 			<span class="text-xl font-bold sm:text-2xl">Astro Cactus</span>
-		</a>
-		<nav
-			id="navigation-menu"
-			class="absolute -inset-x-4 top-14 hidden flex-col items-end gap-y-4 rounded-md bg-bgColor/[.85] py-4 text-accent shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:items-center sm:divide-x sm:divide-dashed sm:divide-accent sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none"
-			aria-label="Main menu"
-		>
-			{
-				menuLinks.map((link) => (
-					<a
-						href={link.path}
-						class="px-4 py-4 sm:py-0 sm:hover:underline"
-						aria-current={url.pathname === link.path ? "page" : false}
-						data-astro-prefetch
-					>
-						{link.title}
-					</a>
-				))
-			}
+		</a> -->
+		<nav id="navigation-menu" class="align-center font-ui flex" aria-label="Main menu">
+			<span class="flex-grow">
+				<a class="internal-link plain" href="/">Isaac Almanza</a>
+			</span>
+			<span class="ssr flex-shrink">
+				{
+					menuLinks.map((link) => (
+						<a
+							href={link.path}
+							class="muted plain"
+							aria-current={url.pathname === link.path ? "page" : false}
+							data-astro-prefetch
+						>
+							{link.title}
+						</a>
+					))
+				}
+			</span>
 		</nav>
 	</div>
 	<Search />
 	<ThemeToggle />
-	<mobile-button>
+	<!-- <mobile-button>
 		<button
 			id="toggle-navigation-menu"
 			class="group relative ms-4 h-7 w-7 sm:invisible sm:hidden"
@@ -94,7 +95,7 @@ const url = new URL(Astro.request.url);
 				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
 			</svg>
 		</button>
-	</mobile-button>
+	</mobile-button> -->
 </header>
 
 <script>
