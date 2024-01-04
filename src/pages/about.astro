@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 
 import PageLayout from "@/layouts/Base";
-import aboutImg from "@/assets/about-astro.png";
 
 const meta = {
 	title: "About",
@@ -12,37 +11,39 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<div class="space-y-6">
-		<h1 class="title">About</h1>
+		<h1 class="title">About me</h1>
 		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
+			My journey is a little different than most. At the age of 13, I had grand plans of becoming a
+			software engineer and soon I began teaching myself how to code. Changed school to focus on
+			programming. After I started building websites and apps, dropped out of university with the
+			goal of building startups. Fast forward a few years and I'm a founder, software engineer, and
+			maker.
 		</p>
-		<div class="flex justify-center">
-			<Image
-				src={aboutImg}
-				alt="A cartoon cactus looking at the 'Astro.build' logo"
-				loading="eager"
-				fetchpriority="high"
-			/>
-		</div>
-		<p>Here are my some of my awesome built in features:</p>
+		<p class="mb-4">
+			I’m the co-founder of <a class="cactus-link" href="https://zeneca.app/" target="_blank"
+				>Zeneca</a
+			> a platform that allows freelancers to receive and widthdraw payments fast. Previously, I was
+			a software engineer at <a class="cactus-link" href="https://fondeadora.com/" target="_blank"
+				>Fondeadora</a
+			> a Mexican neobank and a few early stage YC fintech startups like Heru and Cuanto.
+		</p>
+		<p>Facts about me:</p>
 		<ul class="list-inside list-disc">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
-			<li>Satori for auto generating OG images for blog posts</li>
+			<li>I'm a digital nomad for the last 3 years traveling mosly in LATAM</li>
+			<li>Currenly living in Medellin, Colombia🇨🇴</li>
+			<li>Born and raised in Panama🇵🇦</li>
+			<li>Speak two languages (Spanish and English)</li>
+			<li>Love doing sports mostly calisthenics and soccer</li>
+			<li>My favorites books is the Almanack of Naval Ravikant</li>
+			<li>Been fortunate enough to travel to 11 countries</li>
 		</ul>
-		<p>
-			Clone or fork my <a
-				class="cactus-link inline-block"
-				href="https://github.com/chrismwilliams/astro-cactus"
-				target="_blank"
-				rel="noopener noreferrer"
-				aria-label="github repository">repo</a
-			> if you like me!
-		</p>
+		<p></p>
+		<p>A few links to explore:</p>
+		<ul class="list-inside list-disc">
+			<li>
+				<a href="/writing" class="font-ui cactus-link">Writing</a>
+			</li>
+			<li><a href="/projects" class="font-ui cactus-link">Projects</a></li>
+		</ul>
 	</div>
 </PageLayout>
