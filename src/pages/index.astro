@@ -45,10 +45,10 @@ const cactusTech: Array<{ title: string; desc: string; href: string }> = [
 			</p>
 		</content>
 	</article>
-	<section class="bt bb mb-8 mt-5 pb-8 pt-3">
-		<h3 class="my-4">
+	<section class="bt bb mb-6 mt-8 pb-12 pt-8">
+		<h2 class="title my-4 text-xl">
 			<a href="/topics" class="muted internal-link font-ui">Topics</a>
-		</h3>
+		</h2>
 		<div class="flex flex-wrap leading-6">
 			{
 				allTags.map(([tag, val], index, array) => (
@@ -63,7 +63,9 @@ const cactusTech: Array<{ title: string; desc: string; href: string }> = [
 		</div>
 	</section>
 	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Writings</h2>
+		<h2 class="title mb-4 text-xl">
+			<a href="/writings" class="muted font-ui">Writings</a>
+		</h2>
 		<ul class="space-y-4 sm:space-y-2">
 			{
 				allPostsByDate.map((p) => (

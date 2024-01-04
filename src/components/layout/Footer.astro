@@ -5,25 +5,70 @@ const year = new Date().getFullYear();
 ---
 
 <footer
-	class="mt-auto flex w-full flex-col items-center justify-center gap-y-2 pb-4 pt-20 text-center align-top font-semibold text-gray-600 dark:text-gray-400 sm:flex-row sm:justify-between sm:text-xs"
+	class="mt-auto flex w-full flex-col gap-y-2 pb-4 pt-20 align-top font-semibold text-gray-600 dark:text-gray-400 sm:justify-between sm:text-xs"
 >
+	<section aria-label="More on this site" class="bt my-12 flex-col pt-12">
+		<p class="my-4">
+			<a href="/subscribe" class="muted internal-link font-ui">Receive my updates</a>
+		</p>
+		<p class="my-4">
+			Follow me via email, <a href="https://www.linkedin.com/in/ialmanzaj/" class="internal-link"
+				>Linkedin</a
+			>, <a
+				href="https://twitter.com/ialmanzaj"
+				target="_blank"
+				rel="noopener noreferrer noopener noreferrer">Twitter</a
+			>, and <a href="/subscribe" class="internal-link">other options</a>
+		</p>
+		<form
+			action="https://buttondown.email/api/emails/embed-subscribe/stephango"
+			method="post"
+			target="popupwindow"
+			onsubmit="window.open('https://buttondown.email/stephango','popupwindow')"
+			class="embeddable-buttondown-form"
+		>
+			<input type="email" name="email" id="bd-email" placeholder="Enter your email" required />
+			<input type="hidden" value="1" name="embed" />
+			<input type="hidden" name="tag" value="via-footer" />
+			<input type="submit" value="Sign up" />
+		</form>
+	</section>
 	<div class="me-0 sm:me-4">
 		Copyright &copy; {year}{" "}
 		{siteConfig.author}
 	</div>
-	<nav
-		aria-label="More on this site"
-		class="flex gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-gray-500"
-	>
-		{
-			menuLinks.map((link) => (
-				<a
-					href={link.path}
-					class="px-4 py-2 sm:px-2 sm:py-0 sm:hover:text-textColor sm:hover:underline"
-				>
-					{link.title}
-				</a>
-			))
-		}
-	</nav>
 </footer>
+<style>
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	textarea {
+		border-radius: 0;
+		background-color: transparent;
+		border: 1px solid transparent;
+		border-bottom: 1px solid var(--color-ui-normal);
+		margin-bottom: 1.5em;
+		padding: 0.5em 0;
+	}
+	input:focus {
+		outline: none;
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus,
+	textarea:focus {
+		border-bottom: 1px solid var(--color-action);
+	}
+	input[type="submit"],
+	button {
+		cursor: pointer;
+		-webkit-appearance: none;
+		border-radius: 3px;
+		background-color: var(--theme-accent);
+		border: 1px solid var(--theme-accent);
+		color: var(--color-bg-primary);
+		font-weight: 400;
+		padding: 0.5em 1em;
+	}
+</style>

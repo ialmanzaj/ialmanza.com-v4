@@ -14,6 +14,8 @@
 		--color-outline: rgba(0, 0, 0, 0.1);
 		--theme-quote: 351deg 66% 48%;
 		--color-muted: rgba(90, 80, 70, 0.8);
+		--color-ui-normal: #e6e4d9;
+		--color-action: #24837b;
 	}
 
 	:root.dark {
@@ -28,12 +30,6 @@
 
 	html {
 		@apply scroll-smooth;
-	}
-
-	nav {
-		margin: 0 auto 3em;
-		width: var(--wrap-normal);
-		max-width: var(--wrap-wide);
 	}
 
 	content a:not(.plain):not(.tag):not(.internal-link):not(.footnote):not(.reversefootnote) {
@@ -60,9 +56,7 @@
 	.cactus-link {
 		text-decoration: underline;
 	}
-	.tag {
-		text-transform: capitalize;
-	}
+
 	html body {
 		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-sm font-normal text-textColor antialiased;
 	}

@@ -6,8 +6,8 @@ import { menuLinks } from "@/site-config";
 const url = new URL(Astro.request.url);
 ---
 
-<header id="main-header" class="group relative flex items-center sm:ps-[4.5rem]">
-	<div class="flex sm:flex-col">
+<header id="main-header" class="group relative mb-12 flex items-center">
+	<div class="flex w-full flex-col justify-between">
 		<!-- <a
 			href="/"
 			class="inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block"
@@ -39,7 +39,7 @@ const url = new URL(Astro.request.url);
 			<span class="flex-grow">
 				<a class="internal-link plain" href="/">Isaac Almanza</a>
 			</span>
-			<span class="ssr flex-shrink">
+			<span class="ssr flex-shrin mr-4">
 				{
 					menuLinks.map((link) => (
 						<a

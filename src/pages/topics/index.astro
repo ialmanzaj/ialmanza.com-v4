@@ -14,19 +14,17 @@ const meta = {
 <PageLayout meta={meta}>
 	<h1 class="title mb-6">Topics</h1>
 	<ul class="space-y-4">
-		{
-			allTags.map(([tag, val]) => (
-				<li class="flex items-center gap-x-2">
-					<a
-						class="cactus-link inline-block"
-						href={`/topics/${tag}/`}
-						title={`View posts with the tag: ${tag}`}
-						data-astro-prefetch
-					>
-						{tag}
-					</a>
-				</li>
-			))
-		}
+		<div class="flex flex-wrap leading-6">
+			{
+				allTags.map(([tag, val], index, array) => (
+					<>
+						<a class="tag cactus-link" href={`/topics/${tag}/`}>
+							{tag}
+						</a>
+						{index !== array.length - 1 && <span class="muted">,&nbsp;</span>}
+					</>
+				))
+			}
+		</div>
 	</ul>
 </PageLayout>
