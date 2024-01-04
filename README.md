@@ -42,7 +42,7 @@ Astro Cactus is a simple opinionated starter built with the Astro framework. Use
 
 ## Demo 💻
 
-Check out the [Demo](https://astro-cactus.chriswilliams.dev/), hosted on Netlify
+Check out the [Demo](https://ialmanza.com/), hosted on Netlify
 
 ## Quick start
 
@@ -80,7 +80,7 @@ Replace pnpm with your choice of npm / yarn
 ## Configure
 
 - Edit the config file `src/site.config.ts` for basic site meta data
-  - Read [this post](http://astro-cactus.chriswilliams.dev/posts/webmentions/) for adding webmentions to your site, otherwise set `siteConfig.webmentions.link` to empty value.
+  - Read [this post](http://ialmanza.com/posts/webmentions/) for adding webmentions to your site, otherwise set `siteConfig.webmentions.link` to empty value.
 - Update file `astro.config.ts` site property with your own domain
 - Replace & update files within the `/public` folder:
   - favicon.ico & other social icons
