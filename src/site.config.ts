@@ -31,8 +31,4 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		title: "About",
 		path: "/about/",
 	},
-	{
-		title: "Now",
-		path: "/now/",
-	},
 ];
