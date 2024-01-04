@@ -43,6 +43,28 @@ const projects: Array<{ title: string; desc: string; href: string }> = [
 			</p>
 		</content>
 	</article>
+	<section class="bt mb-6 mt-16 pb-12 pt-8">
+		<h2 class="title mb-4 text-xl">Selected projects</h2>
+		<content>
+			<ul class="space-y-4 sm:space-y-2">
+				{
+					projects.map(({ href, title, desc }) => (
+						<li>
+							<a
+								href={href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="cactus-link inline-block"
+							>
+								{title}
+							</a>
+							<p class="inline-block sm:mt-2">{desc}</p>
+						</li>
+					))
+				}
+			</ul>
+		</content>
+	</section>
 	<section class="bt bb mb-6 mt-8 pb-12 pt-8">
 		<h2 class="title my-4 text-xl">
 			<a href="/topics" class="muted internal-link font-ui">Topics</a>
@@ -73,27 +95,5 @@ const projects: Array<{ title: string; desc: string; href: string }> = [
 				))
 			}
 		</ul>
-	</section>
-	<section class="mt-16">
-		<h2 class="title mb-4 text-xl">Selected projects</h2>
-		<content>
-			<ul class="space-y-4 sm:space-y-2">
-				{
-					projects.map(({ href, title, desc }) => (
-						<li>
-							<a
-								href={href}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="cactus-link inline-block"
-							>
-								{title}
-							</a>
-							<p class="inline-block sm:mt-2">{desc}</p>
-						</li>
-					))
-				}
-			</ul>
-		</content>
 	</section>
 </PageLayout>
