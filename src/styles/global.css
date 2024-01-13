@@ -27,6 +27,12 @@
 		--theme-accent-2: 0deg 0% 93%;
 		--theme-quote: 102deg 100% 86%;
 	}
+	.fill-primary {
+		fill: #000;
+	}
+	.dark .fill-primary {
+		fill: #fff;
+	}
 
 	html {
 		@apply scroll-smooth;
