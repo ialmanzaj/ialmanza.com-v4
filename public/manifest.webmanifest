@@ -1,7 +1,7 @@
 {
-	"name": "Astro Theme Cactus Demo",
-	"short_name": "Astro_Cactus",
-	"description": "Starter blog site for Astro",
+	"name": "Isaac Almanza",
+	"short_name": "Software engineer and entrepreneur",
+	"description": "Im a self-taught software engineer, maker and digital nomad based in LATAM. Im currently focused on experimenting with different ideas around fintech and smart contracts, Solidity, EVM",
 	"icons": [
 		{
 			"src": "/192x192.png",

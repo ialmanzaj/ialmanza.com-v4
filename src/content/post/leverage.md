@@ -1,7 +1,7 @@
 ---
 title: "Leverage: How to move the world with the least effort"
 publishDate: "27 January 2021"
-description: "An example post for Astro Cactus, detailing how to add a custom social image card in the frontmatter"
+description: "The leverage concept is a fundamental mental model that helps us create disproportionate advantages. Being able to create more results, with less effort."
 tags: ["leverage", "compounding", "ideas"]
 ---
 
